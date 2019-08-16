@@ -1,0 +1,12 @@
+version: '3.2'
+
+services:
+  listener:
+    build: .
+    container_name: listener
+    restart: on-failure
+    ports:
+      - 80:80
+    volumes:
+      - .:/webhooks/
+    env_file: variables.env
